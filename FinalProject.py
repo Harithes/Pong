@@ -5,18 +5,15 @@ tk = Tk()
 canvas = Canvas(tk, width=500,  height=500)
 tk.title("Drawing")
 
-#Score Board
+
 root = Tk()
 
-
+#Reset to middle
 def R():
     canvas.move(circ, (250, 250), (250, 250))
 
 
-#Reset to middle
 rButton = Button(root, text="Reset", command=R).grid(row=1, column=0)
-
-
 
 
 # Moving ball
@@ -55,14 +52,13 @@ canvas.bind("<Up>", move_up)
 canvas.bind("<Down>", move_down)
 
 
-
-
 canvas.pack()
 
 right = canvas.create_rectangle(470, 200,  480, 300, fill="green")
 left = canvas.create_rectangle(10, 200, 20, 300, fill="black")
 
 
+#Bounce wals and paddles
 def fx():
     global x, y
     canvas.move(circ, x, y)
